@@ -1,0 +1,109 @@
+/* Trumpet Trainer — landing site. Brass/cream theme matching the app. */
+:root {
+  --brass: #b8902e;
+  --brass-bright: #c9a227;
+  --ink: #2e2708;
+  --heading: #3e330a;
+  --cream: #fbf6e9;
+  --cream-alt: #f4ecd6;
+  --card: #fffdf6;
+  --line: #e6dcbf;
+  --max: 1040px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+}
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+a { color: var(--brass); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3 { color: var(--heading); line-height: 1.2; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(251, 246, 233, 0.92);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.brand { font-weight: 800; font-size: 1.15rem; color: var(--heading); }
+.nav nav a { margin-left: 18px; color: var(--ink); font-weight: 600; font-size: 0.95rem; }
+
+/* Hero */
+.hero {
+  padding: 72px 0 56px;
+  background: linear-gradient(180deg, #fff8e4 0%, var(--cream) 100%);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+.hero h1 { font-size: clamp(2rem, 5vw, 3.1rem); margin: 0 0 16px; }
+.lede { font-size: 1.2rem; max-width: 680px; margin: 0 auto 28px; }
+.fineprint { color: #7a6b3a; font-size: 0.9rem; margin-top: 16px; }
+
+.store-badges { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.badge {
+  display: inline-block; padding: 13px 22px; border-radius: 12px;
+  background: var(--heading); color: #fff; font-weight: 700;
+  border: 1px solid #241d05;
+}
+.badge:hover { text-decoration: none; background: #4d4010; }
+
+/* Sections */
+.section { padding: 64px 0; }
+.section.alt { background: var(--cream-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section h2 { text-align: center; font-size: clamp(1.5rem, 3.5vw, 2.1rem); margin: 0 0 36px; }
+
+/* Feature grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 14px; padding: 22px;
+}
+.card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+.card p { margin: 0; }
+.langs { text-align: center; margin-top: 32px; color: #7a6b3a; }
+
+/* Plans */
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.plan {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 16px; padding: 26px; text-align: center;
+}
+.plan.featured { border-color: var(--brass); box-shadow: 0 6px 24px rgba(184, 144, 46, 0.18); }
+.plan h3 { margin: 0 0 6px; }
+.plan .price { color: var(--brass); font-weight: 800; margin: 0 0 16px; }
+.plan ul { list-style: none; padding: 0; margin: 0; text-align: left; }
+.plan li { padding: 7px 0 7px 26px; position: relative; border-top: 1px solid var(--line); }
+.plan li:first-child { border-top: none; }
+.plan li::before { content: "✓"; color: var(--brass); position: absolute; left: 4px; font-weight: 800; }
+
+/* Video (optional) */
+.video { position: relative; padding-bottom: 56.25%; height: 0; max-width: 760px; margin: 0 auto; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 14px; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--line); padding: 28px 0; background: var(--cream-alt); }
+.foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.foot p { margin: 0; color: #7a6b3a; }
+.foot nav a { margin-left: 16px; color: var(--ink); font-weight: 600; }
+
+/* Legal / content pages */
+.doc { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+.doc h1 { font-size: 2rem; margin-bottom: 8px; }
+.doc h2 { font-size: 1.3rem; margin-top: 32px; }
+.doc .updated { color: #7a6b3a; margin-top: 0; }
+.doc ul { padding-left: 22px; }
+.doc a { text-decoration: underline; }
+.back { display: inline-block; margin-bottom: 8px; font-weight: 600; }
+
+@media (max-width: 560px) {
+  .nav nav a { margin-left: 12px; font-size: 0.85rem; }
+  .brand { font-size: 1rem; }
+}
